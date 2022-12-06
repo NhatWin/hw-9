@@ -55,7 +55,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     prompt(questions).then(data => {
-        writeToFile("README.md", data);    
+        writeToFile("README.md", data);  
     })
 }
 
