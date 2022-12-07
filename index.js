@@ -13,32 +13,32 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Insert description",
+        message: "Give description of the project",
     },
     {
         type: "input",
         name: "installation",
-        message: "Insert installation instructions"
+        message: "Give installation instructions for the project"
     },
     {
         type: "input",
         name: "usage",
-        message: "Insert Usage"
+        message: "Describe the usage for the project"
     },
     {
         type: "input",
         name: "contributing",
-        message: "Insert contribution",
+        message: "who are the contributions on the project?",
     },
     {
         type: "input",
         name: "tests",
-        message: "Insert test instuctions"
+        message: "Add test instuctions"
     },
     {
         type: "list",
         name: "license",
-        message: "pick License",
+        message: "What licenses does your project use?",
         choices: ["MIT","GPLv2","Apache", "GPLv3", "BSD 3-clause", "None"],
     }
 
