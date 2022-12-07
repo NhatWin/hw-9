@@ -56,13 +56,13 @@ function writeToFile(fileName, data) {
 ## Description
 ${data.description}
 
-## Table of Content
+## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
 - [Contribution](#contribution)
 - [Usage](#usage)
 - [Test](#test)
-- [License](#license)
+${renderLicenseLink(data)}
     
 ## Installation
 ~~~
@@ -95,6 +95,14 @@ const renderLicenseMessage = (data) => {
     } else {
         return `## License
 This project is license with ${data.license}`
+    }
+}
+
+const renderLicenseLink = (data) => {
+    if (data.license === "None") {
+        return ""
+    } else {
+        return `- [License](#license)`
     }
 }
 
