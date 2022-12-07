@@ -36,7 +36,7 @@ const questions = [
         message: "Insert test instuctions"
     },
     {
-        type: "rawlist",
+        type: "list",
         name: "license",
         message: "pick License",
         choices: ["MIT","GPLv2","Apache", "GPLv3", "BSD 3-clause", "None"],
@@ -55,23 +55,47 @@ function writeToFile(fileName, data) {
 
 ## Description
 ${data.description}
+
+## Table of Content
+- [Description](#description)
+- [Installation](#installation)
+- [Contribution](#contribution)
+- [Usage](#usage)
+- [Test](#test)
+- [License](#license)
     
 ## Installation
+~~~
 ${data.installation}
+~~~
+
+## Contribution
+${data.contributing}
     
 ## Usage
 ${data.usage}
     
 ## Test
-${data.tests}`, (err) =>
+${data.tests}
+
+${renderLicenseMessage(data)}`, (err) =>
     err ? console.error(err) : console.log('Success!'));
 }
 
 // TODO: Create a function to initialize app
 function init() {
     prompt(questions).then(data => {
-        writeToFile("README.md", data);  
+        writeToFile("generatedREADME.md", data);  
     })
+}
+
+const renderLicenseMessage = (data) => {
+    if(data.license === "None") {
+        return ""
+    } else {
+        return `## License
+This project is license with ${data.license}`
+    }
 }
 
 // Function call to initialize app
