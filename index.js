@@ -36,6 +36,16 @@ const questions = [
         message: "Add test instuctions"
     },
     {
+        type: "input",
+        name: "username",
+        message: "What is your Github username?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email?"
+    },
+    {
         type: "list",
         name: "license",
         message: "What licenses does your project use?",
@@ -62,6 +72,7 @@ ${data.description}
 - [Contribution](#contribution)
 - [Usage](#usage)
 - [Test](#test)
+- [Questions](#questions)
 ${renderLicenseLink(data)}
     
 ## Installation
@@ -77,6 +88,11 @@ ${data.usage}
     
 ## Test
 ${data.tests}
+
+## Questions
+GitHub: ${data.username}
+
+Email: ${data.email}
 
 ${renderLicenseMessage(data)}`, (err) =>
     err ? console.error(err) : console.log('Success!'));
